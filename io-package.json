@@ -1,0 +1,76 @@
+{
+	"common": {
+		"name": "connectyourdevice",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "Connect your device",
+		"titleLang": {
+			"en": "Connect your device",
+			"de": "Schließen Sie Ihr Gerät an",
+			"ru": "Подключите ваше устройство",
+			"pt": "Conecte seu dispositivo",
+			"nl": "Verbind uw apparaat",
+			"fr": "Connectez votre appareil",
+			"it": "Collega il tuo dispositivo",
+			"es": "Conecta tu dispositivo",
+			"pl": "Podłącz swoje urządzenie",
+			"zh-cn": "连接您的设备"
+		},
+		"desc": {
+			"en": "Konfigurieren und anlegen von Geräten für Homekit u. google Home",
+			"de": "Konfigurieren und anlegen von gehört für Homekit u. ",
+			"ru": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"pt": "Configuração e configuração de gerentes para Homekit u. ",
+			"nl": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"fr": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"it": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"es": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"pl": "Konfigurieren und anlegen von Geräten für Homekit u. ",
+			"zh-cn": "Konfigurieren and anlegen vonGerätenfürHomekit u。"
+		},
+		"authors": [
+			"Andreas Stieger <ast@pixelconsult.at>"
+		],
+		"keywords": [
+			"homekit google device"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "connectyourdevice.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/pixelconsult/ioBroker.connectyourdevice/master/admin/connectyourdevice.png",
+		"readme": "https://github.com/pixelconsult/ioBroker.connectyourdevice/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "iot-systems",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=1.4.2"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
