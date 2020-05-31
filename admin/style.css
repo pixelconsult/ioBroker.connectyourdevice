@@ -8,3 +8,30 @@
 }
 
 /* Add your styles here */
+
+
+.cyd-buttons {
+	margin-top:15px;
+	margin-bottom:15px;
+	text-align:right;
+}
+
+
+.cyd-table td {
+	background-color:#fff;
+}
+
+
+.cyd-table td.cyd-btncol {
+	text-align:right;
+}
+
+.cyd-table th {
+	background-color: #64b5f6;
+	color:#fff;
+}
+
+.m .modal .modal-content {
+	padding: 15px;
+	width: 100% !important;
+}

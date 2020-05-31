@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="../../js/translate.js"></script>
 	<script type="text/javascript" src="../../lib/js/materialize.js"></script>
 	<script type="text/javascript" src="../../js/adapter-settings.js"></script>
+	<script type="text/javascript" src="connectyourdevice.js"></script>
 
 	<!-- Load our own files -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
@@ -19,6 +20,8 @@
 
 	<script type="text/javascript">
 		// This will be called by the admin adapter when the settings page loads
+
+
 		function load(settings, onChange) {
 			// example: select elements with id=key and class=value and insert value
 			if (!settings) return;
@@ -62,31 +65,183 @@
 </head>
 
 <body>
-
 	<div class="m adapter-container">
+		<ul class="tabs">
+			<li class="tab col s6 l2"><a href="#tab-devices" class="translate">Geräte</a></li>
+			<li class="tab col s6 l2"><a href="#tab-settings" class="translate">Einstellungen</a></li>
+			<li class="tab col s6 l2"><a href="#tab-homekit" class="translate">Homekit</a></li>
+		</ul>
 
-		<div class="row">
-			<div class="col s12 m4 l2">
-				<img src="connectyourdevice.png" class="logo">
+
+		<div id="tab-devices">
+
+					<div class="cyd-buttons">
+						<a class="waves-effect waves-light btn cyd-dialog cyd-add" href="#"><i class="material-icons left">add</i> Neues Gerät</a>
+					</div>
+
+					<table class="cyd-table cyd-devices striped">
+						<thead>
+						<tr>
+							<th>
+								Name
+							</th>
+
+							<th>
+								Type
+							</th>
+
+							<th>
+								Homekit enabled
+							</th>
+							<th>
+
+							</th>
+						</tr>
+						</thead>
+
+						<tbody>
+						<tr>
+							<td>
+								Licht Büro
+							</td>
+
+							<td>
+								Light
+							</td>
+
+							<td>
+								Yes
+							</td>
+							<td class="cyd-btncol">
+								<a class="waves-effect waves-light btn cyd-dialog cyd-edit"><i class="material-icons">edit</i></a>
+								<a class="waves-effect waves-light btn cyd-dialog cyd-delete"><i class="material-icons">delete</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Temperatursensor Büro
+							</td>
+
+							<td>
+								Temperatur
+							</td>
+
+							<td>
+								Yes
+							</td>
+							<td class="cyd-btncol">
+								<a class="waves-effect waves-light btn cyd-dialog cyd-edit"><i class="material-icons">edit</i></a>
+								<a class="waves-effect waves-light btn cyd-dialog cyd-delete"><i class="material-icons">delete</i></a>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+
+
+
+
+		</div>
+
+		<div id="tab-settings">
+			<div class="row">
+				<div class="col s6 input-field">
+					<input type="checkbox" class="value" id="option1" />
+					<label for="option1" class="translate">option1</label>
+				</div>
+
+				<div class="col s6 input-field">
+					<input type="text" class="value" id="option2" />
+					<label for="option2" class="translate">option2</label>
+				</div>
 			</div>
 		</div>
 
-		<!-- Put your content here -->
-
-		<!-- For example columns with settings: -->
-		<div class="row">
-			<div class="col s6 input-field">
-				<input type="checkbox" class="value" id="option1" />
-				<label for="option1" class="translate">option1</label>
-			</div>
-
-			<div class="col s6 input-field">
-				<input type="text" class="value" id="option2" />
-				<label for="option2" class="translate">option2</label>
-			</div>
+		<div id="tab-homekit">
+			Homekit Einstellungen
 		</div>
+
 
 	</div>
+
+	<div style="display:none;">
+
+		<div id="cyd-editForm" class="cyd-dialog">
+			<div class="cyd-content">
+				<form id="cyd-form">
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Bezeichnung des Geräts" name="name" id="cyd-name" type="text" class="validate">
+						<label for="cyd-name" class="active">Bezeichnung</label>
+					</div>
+
+					<div class="input-field col s6">
+						<select name="devicetype" id="cyd-devicetype">
+							<option value="" selected>Bitte auswählen</option>
+							<option value="1">Licht (Lightbulb)</option>
+							<option value="2">Rollladen (Window)</option>
+							<option value="3">Steckdose (Outlet)</option>
+						</select>
+						<label for="cyd-devicetype">Art des Geräts</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<label>
+							<input type="checkbox" class="filled-in" checked="checked" />
+							<span>Homekit aktivieren</span>
+						</label>
+					</div>
+
+					<div class="input-field col s6">
+						<select name="hkbridge" disabled id="cyd-hkbridge">
+							<option value="" selected>Bitte auswählen</option>
+						</select>
+						<label for="cyd-hkbridge">Homekit Bridge</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+
+					<div class="input-field col s6">
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name" class="active">First Name</label>
+					</div>
+				</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+
 
 </body>
 
